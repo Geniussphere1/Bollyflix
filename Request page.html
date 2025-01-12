@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="Home media.css">
+  <link rel="stylesheet" href="Post media.css">
+  <link rel="stylesheet" href="Post.css"
+  <title>Bollyflix</title>
+</head>
+<body>
+  <header>
+     <div class="nav-bar">
+      <a href="index.html"> <img id="logo-img" src="https://geniussphere1.github.io/Bollyflix/images/20240627_222434.png" alt="https://geniussphere1.github.io/Bollyflix/images/20240627_222434.png"> </a>
+     </div>
+     <div class="search-bar">
+       <input id="search-input1"  type="text" placeholder="What are you finding?">
+      <p class="search" id="search-icon1">🔎</p>
+     </div>
+  <div class="overlay" id="overlay"></div>
+    <div class="content">
+      <div class="menu-bar" id="menu-bar1">
+        <pom>Menu</pom>
+        <pic class="bars"><i class="fa-solid fa-bars"></i></pic>
+      </div>
+      <!-- Add other content here -->
+    <div class="menu-bar2" id="menu-bar2">
+       <div class="search-input3">
+         <img id="search-input3"src="https://geniussphere1.github.io/Bollyflix/images/20240627_222434.png" alt="https://geniussphere1.github.io/Bollyflix/images/20240627_222434.png">
+         </div>
+    <div class="close-btn1" id="close-btn"><i class="fas fa-times fa-solid1"></i></div>
+     <p class="list-icons" id="list-icons3" onclick="navigateToCategory('home')"> <a href="index.html"> 🏠 HOME</a></p>
+<p class="list-icons" id="movies">🎬 MOVIES
+  <i class="fa-solid fa-angle-down fa-solid1"></i>
+</p>
+<div class="dropdown" id="movies-menu">
+  <p class="list-icons1" onclick="navigateToCategory('south-hindi-dubbed')">SOUTH HINDI DUBBED</p>
+  <p class="list-icons1" onclick="navigateToCategory('adult-movies')">ADULT MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('bollywood')">BOLLYWOOD</p>
+  <p class="list-icons1" onclick="navigateToCategory('dual-audio')">DUAL AUDIO</p>
+  <p class="list-icons1" onclick="navigateToCategory('hindi-dubbed')">HINDI DUBBED</p>
+  <p class="list-icons1" onclick="navigateToCategory('hollywood')">HOLLYWOOD</p>
+  <p class="list-icons1" onclick="navigateToCategory('multi-audio')">MULTI AUDIO</p>
+  <p class="list-icons1" onclick="navigateToCategory('punjabi')">PUNJABI</p>
+  <p class="list-icons1" onclick="navigateToCategory('bengali')">BENGALI</p>
+</div>
+<p class="list-icons" id="genra">🔗 GENRA <i class="fa-solid fa-angle-down fa-solid1"></i></p>
+<div class="dropdown" id="genra-menu">
+  <p class="list-icons1" onclick="navigateToCategory('action')">ACTION </p>
+  <p class="list-icons1" onclick="navigateToCategory('adventure')">ADVENTURE</p>
+  <p class="list-icons1" onclick="navigateToCategory('animation')">ANIMATION</p>
+  <p class="list-icons1" onclick="navigateToCategory('comedy')">COMEDY</p>
+  <p class="list-icons1" onclick="navigateToCategory('crime')">CRIME</p>
+  <p class="list-icons1" onclick="navigateToCategory('drama')">DRAMA</p>
+  <p class="list-icons1" onclick="navigateToCategory('fantasy')">FANTASY</p>
+  <p class="list-icons1" onclick="navigateToCategory('historical')">HISTORICAL</p>
+  <p class="list-icons1" onclick="navigateToCategory('horror')">HORROR</p>
+  <p class="list-icons1" onclick="navigateToCategory('mystery')">MYSTERY </p>
+  <p class="list-icons1" onclick="navigateToCategory('political')">POLITICAL</p>
+  <p class="list-icons1" onclick="navigateToCategory('romance')">ROMANCE</p>
+  <p class="list-icons1" onclick="navigateToCategory('sci-fi')">SCI-FI</p>
+  <p class="list-icons1" onclick="navigateToCategory('thriller')">THRILLER</p>
+  <!-- Add items for GENRA here -->
+</div>
+<p class="list-icons" id="year">📅 YEAR <i class="fa-solid fa-angle-down fa-solid1"></i></p>
+<div class="dropdown" id="year-menu">
+  <p class="list-icons1" onclick="navigateToCategory('2024')">2024 </p>
+  <p class="list-icons1" onclick="navigateToCategory('2023')">2023</p>
+  <p class="list-icons1" onclick="navigateToCategory('2022')">2022</p>
+  <p class="list-icons1" onclick="navigateToCategory('2021')">2021</p>
+  <p class="list-icons1" id="year-2" onclick="navigateToCategory('2016-2020')">2016-2020<i class="fa-solid fa-angle-down fa-solid1"></i></p>
+  <div class="dropdown" id="year-menu2">
+    <p class="list-icons2" onclick="navigateToCategory('2016')">2016 </p>
+    <p class="list-icons2" onclick="navigateToCategory('2015')">2015</p>
+    <p class="list-icons2" onclick="navigateToCategory('2014')">2014</p>
+    <p class="list-icons2" onclick="navigateToCategory('2013')">2013</p>
+  </div>
+  <p class="list-icons1" onclick="navigateToCategory('2011-2015')">2011-2015</p>
+  <p class="list-icons1" onclick="navigateToCategory('2006-2010')">2006-2010</p>
+  <p class="list-icons1" onclick="navigateToCategory('2001-2005')">2001-2005</p>
+  <p class="list-icons1" onclick="navigateToCategory('1880-2000')">1880-2000</p>
+  <!-- Add items for YEAR here -->
+</div>
+<p class="list-icons" id="quality">🌐 WEB SERIES<i class="fa-solid fa-angle-down fa-solid1"></i></p>
+<div class="dropdown" id="quality-menu">
+  <p class="list-icons1" onclick="navigateToCategory('amazon-prime-video')">AMAZON PRIME VIDEO </p>
+  <p class="list-icons1" onclick="navigateToCategory('hindi-dubbed-series')">HINDI DUBBED SERIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('hotstar')">HOTSTAR</p>
+  <p class="list-icons1" onclick="navigateToCategory('hulu')">HULU</p>
+  <p class="list-icons1" onclick="navigateToCategory('korean-drama')">KOREAN DRAMA</p>
+  <p class="list-icons1" onclick="navigateToCategory('mx-player-originals')">MX PLAYER ORIGINALS</p>
+  <p class="list-icons1" onclick="navigateToCategory('netflix')">NETFLIX</p>
+  <p class="list-icons1" onclick="navigateToCategory('voot-select')">VOOT SELECT</p>
+  <p class="list-icons1" onclick="navigateToCategory('ongoing-series')">ONGOING SERIES</p>
+  <!-- Add items for QUALITY here -->
+</div>
+<p class="list-icons">📺 TV SHOW</p>
+<p class="list-icons" id="web-series">☠️ QUALITY<i class="fa-solid fa-angle-down fa-solid1"></i></p>
+<div class="dropdown" id="web-series-menu">
+  <p class="list-icons1" onclick="navigateToCategory('480p-movies')">480P MOVIES </p>
+  <p class="list-icons1" onclick="navigateToCategory('720p-movies')">720P MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('1080p-movies')">1080P MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('300mb-movies')">300MB MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('500mb-movies')">500MB MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('700mb-movies')">700MB MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('900mb-movies')">900MB MOVIES</p>
+  <p class="list-icons1" onclick="navigateToCategory('1gb-movies')">1GB MOVIES</p>
+  <!-- Add items for WEB SERIES here -->
+</div>
+
+<p class="list-icons" onclick="navigateToCategory('Anime')">💢 ANIME</p>
+<!-- Menu items go here -->
+</div>
+</div>
+<div class="menu-bar3">
+  <p class="list-icons0" onclick="navigateToCategory('home')">🏠 HOME</p>
+  <p class="list-icons0" id="movies" onclick="navigateToCategory('movies')">🎬 MOVIES
+    <i class="fa-solid fa-chevron-down fa-solid1"></i>
+  </p>
+  <div class="dropdown1" id="movies-menu1">
+    <p class="list-icons-1" onclick="navigateToCategory('south-hindi-dubbed')">SOUTH HINDI DUBBED</p>
+    <p class="list-icons-1" onclick="navigateToCategory('adult-movies')">ADULT MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('bollywood')">BOLLYWOOD</p>
+    <p class="list-icons-1" onclick="navigateToCategory('dual-audio')">DUAL AUDIO</p>
+    <p class="list-icons-1" onclick="navigateToCategory('hindi-dubbed')">HINDI DUBBED</p>
+    <p class="list-icons-1" onclick="navigateToCategory('hollywood')">HOLLYWOOD</p>
+    <p class="list-icons-1" onclick="navigateToCategory('multi-audio')">MULTI AUDIO</p>
+    <p class="list-icons-1" onclick="navigateToCategory('punjabi')">PUNJABI</p>
+    <p class="list-icons-1" onclick="navigateToCategory('bengali')">BENGALI</p>
+  </div>
+  <p class="list-icons0" id="genra" onclick="navigateToCategory('genra')">🔗 GENRA <i class="fa-solid fa-chevron-down fa-solid1"></i></p>
+  <div class="dropdown1" id="genra-menu1">
+    <p class="list-icons-1" onclick="navigateToCategory('action')">ACTION </p>
+    <p class="list-icons-1" onclick="navigateToCategory('adventure')">ADVENTURE</p>
+    <p class="list-icons-1" onclick="navigateToCategory('animation')">ANIMATION</p>
+    <p class="list-icons-1" onclick="navigateToCategory('comedy')">COMEDY</p>
+    <p class="list-icons-1" onclick="navigateToCategory('crime')">CRIME</p>
+    <p class="list-icons-1" onclick="navigateToCategory('drama')">DRAMA</p>
+    <p class="list-icons-1" onclick="navigateToCategory('fantasy')">FANTASY</p>
+    <p class="list-icons-1" onclick="navigateToCategory('historical')">HISTORICAL</p>
+    <p class="list-icons-1" onclick="navigateToCategory('horror')">HORROR</p>
+    <p class="list-icons-1" onclick="navigateToCategory('mystery')">MYSTERY </p>
+    <p class="list-icons-1" onclick="navigateToCategory('political')">POLITICAL</p>
+    <p class="list-icons-1" onclick="navigateToCategory('romance')">ROMANCE</p>
+    <p class="list-icons-1" onclick="navigateToCategory('sci-fi')">SCI-FI</p>
+    <p class="list-icons-1" onclick="navigateToCategory('thriller')">THRILLER</p>
+    <!-- Add items for GENRA here -->
+  </div>
+  <p class="list-icons0" id="year" onclick="navigateToCategory('year')">📅 YEAR <i class="fa-solid fa-chevron-down fa-solid1"></i></p>
+  <div class="dropdown1" id="year-menu1">
+    <p class="list-icons-1" onclick="navigateToCategory('2024')">2024 </p>
+    <p class="list-icons-1" onclick="navigateToCategory('2023')">2023</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2022')">2022</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2021')">2021</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2020')">2020</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2019')">2019 </p>
+    <p class="list-icons-1" onclick="navigateToCategory('2018')">2018</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2017')">2017</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2016')">2016</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2015')">2015</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2014')">2014</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2013')">2013</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2012')">2012</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2011-2015')">2011-2015</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2006-2010')">2006-2010</p>
+    <p class="list-icons-1" onclick="navigateToCategory('2001-2005')">2001-2005</p>
+    <p class="list-icons-1" onclick="navigateToCategory('1880-2000')">1880-2000</p>
+    <!-- Add items for YEAR here -->
+  </div>
+  <p class="list-icons0" id="quality" onclick="navigateToCategory('quality')">☠️ QUALITY <i class="fa-solid fa-chevron-down fa-solid1"></i></p>
+  <div class="dropdown1" id="quality-menu1">
+    <p class="list-icons-1" onclick="navigateToCategory('480p-movies')">480P MOVIES </p>
+    <p class="list-icons-1" onclick="navigateToCategory('720p-movies')">720P MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('1080p-movies')">1080P MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('300mb-movies')">300MB MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('500mb-movies')">500MB MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('700mb-movies')">700MB MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('900mb-movies')">900MB MOVIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('1gb-movies')">1GB MOVIES</p>
+    <!-- Add items for QUALITY here -->
+  </div>
+  <p class="list-icons0">📺 TV SHOW</p>
+  <p class="list-icons0" id="web-series" onclick="navigateToCategory('web-series')">🌐 WEB SERIES <i class="fa-solid fa-chevron-down fa-solid1"></i></p>
+  <div class="dropdown1" id="web-series-menu1">
+    <p class="list-icons-1" onclick="navigateToCategory('amazon-prime-video')">AMAZON PRIME VIDEO </p>
+    <p class="list-icons-1" onclick="navigateToCategory('hindi-dubbed-series')">HINDI DUBBED SERIES</p>
+    <p class="list-icons-1" onclick="navigateToCategory('hotstar')">HOTSTAR</p>
+    <p class="list-icons-1" onclick="navigateToCategory('hulu')">HULU</p>
+    <p class="list-icons-1" onclick="navigateToCategory('korean-drama')">KOREAN DRAMA</p>
+    <p class="list-icons-1" onclick="navigateToCategory('mx-player-originals')">MX PLAYER ORIGINALS</p>
+    <p class="list-icons-1" onclick="navigateToCategory('netflix')">NETFLIX</p>
+    <p class="list-icons-1" onclick="navigateToCategory('voot-select')">VOOT SELECT</p>
+    <p class="list-icons-1" onclick="navigateToCategory('ongoing-series')">ONGOING SERIES</p>
+    <!-- Add items for WEB SERIES here -->
+  </div>
+
+  <p class="list-icons0" onclick="navigateToCategory('Anime')">💢 ANIME</p>
+  <!-- Menu items go here -->
+</div>
+</div>
+                
+  </header>
+              <div class="main-post3">
+  <main class="main-items">
+  <div class="breadcrumbs">
+<span></span><span><a href="">HOME</a> » <span><a href="">REQUEST PAGE</a></span></span></div>
+            <div class="heading39">
+              Request Page
+                </div>
+                <div class="disclaimer">
+                  <img fetchpriority="high" decoding="async" class="aligncenter size-full" src="https://1.bp.blogspot.com/-keuD_89jmLY/XKiN20yuenI/AAAAAAAAQWU/SIiW8Nd3ITY-Vmf9Lgeo-n5jFKUL5DaDgCLcBGAs/s1600/Request-Movies.png" width="350" height="176">
+                 <p>Please, Read the following rules first thanks:</p>
+                 <ul>
+                   <li>Don’t ask for specific host or size (i will give you the best),</li>
+                   <li>You are free to tell me about the Quality you need,</li>
+                   <li>Don’t ask for another request before your first request was finished,</li>
+                   <li>Don’t ask twice for the same request,</li>
+                   <li>All requests will processed respectively,</li>
+                   <li>Give me IMDB link for <a href="https://bollyflix.band/movies/" class="lar_link lar_link_outgoing" data-linkid="12000" data-postid="9526" target="_self" data-wpel-link="internal">movies</a> to make it easy,</li>
+                   <li>No more TV Shows in request page,</li>
+                   <li>I am not a robot so give me some rest,</li>
+                   <li>Please Mention Your request with Quality And Size Its Important,</li>
+                 </ul>
+                <ul id="ul">
+                 
+                </ul>
+                                   <strong id="relatedtext3">ADD COMMENT</strong>
+                  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://bollyflx.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                 
+                </div>
+                </main>
+            <div class="buttons-lon">
+              <div class="box29">
+                <div id="box-29">
+                 <p>Join Telegram</p>
+                 <img id="img" src="https://bollyflix-cdn.store/wp-content/uploads/2021/07/Join-On-Telegram.jpg" alt="" >
+                  
+                </div>
+  <div id="box-29">
+                  <p>Movies</p>
+                  <div class="buttons-8">
+                    <button id="button-79" type="submit" onclick="navigateToCategory('BENGALI')">BENGALI</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('BHOJPURI')">BHOJPURI</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('BOLLYWOOD')">BOLLYWOOD</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('CHINESE')">CHINESE</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('DUAL AUDIO')">DUAL AUDIO</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('FOREIGN')">FOREIGN</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('GUJARATI')">GUJARATI</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('HINDI DUBBED')">HINDI DUBBED</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('HOLLYWOOD')">HOLLYWOOD</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('KANNADA')">KANNADA</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('KOREAN')">KOREAN</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('MALAYALAM')">MALAYALAM</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('MARATHI')">MARATHI</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('MULTI AUDIO')">MULTI AUDIO</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('OTHERS')">OTHERS</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('PUNJABI')">PUNJABI</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('SOUTH HINDI DUBBED')">SOUTH HINDI DUBBED</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('TAMIL+')">TAMIL+</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('TELUGU')">TELUGU</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('TURKISH')">TURKISH</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('URDU')">URDU</button>
+                  </div>
+                </div>
+                <div id="box-29">
+                  <p>WEB SERIES</p>
+                  <div class="buttons-8">
+                    <button id="button-79" type="submit" onclick="navigateToCategory('ALT BALAJI EXCLUSIVE')">ALT BALAJI EXCLUSIVE</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('AMAZON PRIME VIDEO')">AMAZON PRIME VIDEO</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('Amazon MiniTV')">Amazon MiniTV</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('Apple TV+')">Apple TV+</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('BBC')">BBC</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('Cartoon Series')">Cartoon Series</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('DISNEY+')">DISNEY+</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('ENGLISH SERIES')">ENGLISH SERIES</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('HINDI DUBBED SERIES')">HINDI DUBBED SERIES</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('Hoichoi')">Hoichoi</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('HOTSTAR')">HOTSTAR</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('HULU')">HULU</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('JIOCINEMA')">JIOCINEMA</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('KOREAN DRAMA')">KOREAN DRAMA</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('MX PLAYER ORIGINALS')">MX PLAYER ORIGINALS</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('NETFLIX')">NETFLIX</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('ONGOING SERIES')">ONGOING SERIES</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('PARAMOUNT+')">PARAMOUNT+</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('SONYLIV')">SONYLIV</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('THE CW NETWORK')">THE CW NETWORK</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('TVF PLAY')">TVF PLAY</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('ULLU ORIGINALS')">ULLU ORIGINALS</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('Viu Originals')">Viu Originals</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('VOOT SELECT')">VOOT SELECT</button>
+                    <button id="button-79" type="submit" onclick="navigateToCategory('ZEE5 EXCLUSIVE')">ZEE5 EXCLUSIVE</button>
+                  </div>
+                </div>
+            </div>
+           
+                         </div>
+            </div>
+     <div class="footer-box"> <i class="fa-solid fa-angle-up fa-solid1" id="scrollToTop"></i>
+      
+             <span class="footer-copyright"><a class="footer-copyright1" href=" https://bollyflix.city/">BollyFlix </a> Copyright © 2024.
+             </span>
+             <div class="footer-buttons1">
+               <ul class="footer-buttons"><a id="lom" href="Disclaimers.html">Disclaimer</a> </ul>
+               <ul class="footer-buttons"><a id="lom" href="DMCA.html">DMCA</a>
+               </ul>
+               <ul class="footer-buttons">
+                 <a id="lom" href="Request page.html">Request</a>
+               </ul>
+               <ul class="footer-buttons"> <a id="lom" href="Post Credits.html">Credits</a>
+               </ul>
+               <ul class="footer-buttons">
+                 <a id="lom" href="Contact Us.html">Contact</a>
+               </ul>
+               <ul class="footer-buttons">
+                 <a id="lom" href="How to Download Movies.html">How to Download</a>
+               </ul>
+               <ul class="footer-buttons"> <a id="lom" href="Contact Us.html">Alt Movies</a>
+               </ul>
+             </div>
+           </div>
+
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="Home.js">home.js</script>
+
+</body>
+</html>
