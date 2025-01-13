@@ -266,7 +266,7 @@ window.addEventListener('click', function(e) {
       // First page button
       const firstButton = document.createElement('button');
       firstButton.innerText = '1';
-      firstButton.addEventListener('click', () => showPage);
+      firstButton.addEventListener('click', () => showPage(1));
       pagination.appendChild(firstButton);
 
       // Dots before current page if necessary
