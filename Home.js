@@ -266,7 +266,7 @@ window.addEventListener('click', function(e) {
       // First page button
       const firstButton = document.createElement('button');
       firstButton.innerText = '1';
-      firstButton.addEventListener('click', () => showPage(1));
+      firstButton.addEventListener('click', () => showPage);
       pagination.appendChild(firstButton);
 
       // Dots before current page if necessary
@@ -383,7 +383,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+//add https://geniussphere1.github.io/Bollyflix before image
 
+document.querySelectorAll('img').forEach(img => {
+  const relativePath = img.getAttribute('src');
+
+  // Skip images with class "ads1" or an id attribute
+  if (
+    relativePath &&
+    !img.classList.contains('ads1') &&
+    !img.hasAttribute('id') &&
+    !relativePath.startsWith('https://geniussphere1.github.io/Bollyflix')
+  ) {
+    img.src = 'https://geniussphere1.github.io/Bollyflix' + relativePath;
+  }
+});
+
+
+//
 
 //comment box
 
