@@ -383,24 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//add https://geniussphere1.github.io/Bollyflix before image
 
-document.querySelectorAll('img').forEach(img => {
-  const relativePath = img.getAttribute('src');
-
-  // Skip images with class "ads1" or an id attribute
-  if (
-    relativePath &&
-    !img.classList.contains('ads1') &&
-    !img.hasAttribute('id') &&
-    !relativePath.startsWith('https://geniussphere1.github.io/Bollyflix')
-  ) {
-    img.src = 'https://geniussphere1.github.io/Bollyflix' + relativePath;
-  }
-});
-
-
-//
 
 //comment box
 
