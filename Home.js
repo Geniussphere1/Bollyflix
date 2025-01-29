@@ -393,25 +393,27 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(html => {
             let parser = new DOMParser();
             let doc = parser.parseFromString(html, "text/html");
-            let allPosts = Array.from(doc.querySelectorAll(".post-box")); // Convert NodeList to Array
+            let allPosts = Array.from(doc.querySelectorAll(".post-box")); // Get all posts
 
-            let relatedContainer = document.querySelector(".Related-post"); // Target related post container
+            let relatedContainer = document.querySelector(".related-posts"); // ✅ Target correct container
             if (!relatedContainer) {
-                console.error("Related post container not found!");
+                console.error("❌ .related-posts container not found!");
                 return;
             }
 
             let heading1 = document.querySelector("h1");
             if (!heading1) {
-                console.error("h1 not found!");
+                console.error("❌ h1 not found!");
                 return;
             }
             let heading1Text = heading1.innerText.toLowerCase().trim(); // Movie title from h1
 
-            // 🔎 Filter posts related to the current movie (h1)
+            // 🔎 Filter posts by h1 text or category
             let relatedPosts = allPosts.filter(post => {
-                let postTitle = post.querySelector("h2, h3");
-                return postTitle && postTitle.innerText.toLowerCase().includes(heading1Text);
+                let postTitle = post.querySelector(".box-text")?.innerText.toLowerCase();
+                let categories = JSON.parse(post.querySelector(".box-1")?.dataset.categories || "[]");
+                
+                return postTitle?.includes(heading1Text) || categories.includes("Movies");
             });
 
             // If fewer than 4 related posts, add random ones
@@ -423,8 +425,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // 🎲 Shuffle and select 4 posts
             relatedPosts.sort(() => 0.5 - Math.random()).slice(0, 4).forEach(post => {
                 let clonedPost = post.cloneNode(true);
-                clonedPost.classList.add("box-1"); // ✅ Add the .box-1 class
-                relatedContainer.appendChild(clonedPost);
+                relatedContainer.appendChild(clonedPost); // ✅ Append to .related-posts
             });
 
             console.log("✅ Related posts loaded for:", heading1Text);
