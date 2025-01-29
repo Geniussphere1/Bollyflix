@@ -383,7 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
+//remove.html
+    document.addEventListener("DOMContentLoaded", function () {
+        let path = window.location.pathname;
+        if (!path.endsWith("/") && !path.includes(".")) {
+            window.location.href = path + ".html";
+        }
+    });
+              
 //comment box
 
