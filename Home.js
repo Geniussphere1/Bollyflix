@@ -386,35 +386,50 @@ document.addEventListener('DOMContentLoaded', () => {
 // related post 
 document.addEventListener("DOMContentLoaded", function () {
     fetch('index.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load index.html");
+            return response.text();
+        })
         .then(html => {
             let parser = new DOMParser();
             let doc = parser.parseFromString(html, "text/html");
             let allPosts = Array.from(doc.querySelectorAll(".post-box")); // Convert NodeList to Array
 
             let relatedContainer = document.querySelector(".Related-post"); // Target related post container
-            if (!relatedContainer) return; // Stop if container is missing
+            if (!relatedContainer) {
+                console.error("Related post container not found!");
+                return;
+            }
 
-            let heading1Text = document.querySelector("h1")?.innerText.toLowerCase(); // Get h1 text
+            let heading1 = document.querySelector("h1");
+            if (!heading1) {
+                console.error("h1 not found!");
+                return;
+            }
+            let heading1Text = heading1.innerText.toLowerCase().trim(); // Movie title from h1
 
-            // Filter posts related to h1 text
+            // 🔎 Filter posts related to the current movie (h1)
             let relatedPosts = allPosts.filter(post => {
-                let postTitle = post.querySelector("h2, h3")?.innerText.toLowerCase();
-                return postTitle && postTitle.includes(heading1Text);
+                let postTitle = post.querySelector("h2, h3");
+                return postTitle && postTitle.innerText.toLowerCase().includes(heading1Text);
             });
 
-            // If fewer than 4 related posts, fill the remaining spots with random posts
+            // If fewer than 4 related posts, add random ones
             while (relatedPosts.length < 4 && allPosts.length > relatedPosts.length) {
                 let randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
                 if (!relatedPosts.includes(randomPost)) relatedPosts.push(randomPost);
             }
 
-            // Shuffle posts randomly and select only 4
+            // 🎲 Shuffle and select 4 posts
             relatedPosts.sort(() => 0.5 - Math.random()).slice(0, 4).forEach(post => {
-                relatedContainer.appendChild(post.cloneNode(true));
+                let clonedPost = post.cloneNode(true);
+                clonedPost.classList.add("box-1"); // ✅ Add the .box-1 class
+                relatedContainer.appendChild(clonedPost);
             });
+
+            console.log("✅ Related posts loaded for:", heading1Text);
         })
-        .catch(error => console.error("Error fetching posts:", error));
+        .catch(error => console.error("❌ Error fetching posts:", error));
 });
 
               
