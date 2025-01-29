@@ -383,13 +383,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-//remove.html
-    document.addEventListener("DOMContentLoaded", function () {
-        let path = window.location.pathname;
-        if (!path.endsWith("/") && !path.includes(".")) {
-            window.location.href = path + ".html";
-        }
-    });
+// related post 
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('index.html')
+        .then(response => response.text())
+        .then(html => {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(html, "text/html");
+            let allPosts = Array.from(doc.querySelectorAll(".post-box")); // Convert NodeList to Array
+
+            let relatedContainer = document.querySelector(".Related-post"); // Target related post container
+            if (!relatedContainer) return; // Stop if container is missing
+
+            let heading1Text = document.querySelector("h1")?.innerText.toLowerCase(); // Get h1 text
+
+            // Filter posts related to h1 text
+            let relatedPosts = allPosts.filter(post => {
+                let postTitle = post.querySelector("h2, h3")?.innerText.toLowerCase();
+                return postTitle && postTitle.includes(heading1Text);
+            });
+
+            // If fewer than 4 related posts, fill the remaining spots with random posts
+            while (relatedPosts.length < 4 && allPosts.length > relatedPosts.length) {
+                let randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
+                if (!relatedPosts.includes(randomPost)) relatedPosts.push(randomPost);
+            }
+
+            // Shuffle posts randomly and select only 4
+            relatedPosts.sort(() => 0.5 - Math.random()).slice(0, 4).forEach(post => {
+                relatedContainer.appendChild(post.cloneNode(true));
+            });
+        })
+        .catch(error => console.error("Error fetching posts:", error));
+});
+
               
 //comment box
 
